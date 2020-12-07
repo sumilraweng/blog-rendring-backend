@@ -33,6 +33,10 @@ app.get("/blogs", (req, res) => {
   res.json(data);
 });
 
+app.get("/", (req, res) => {
+  res.send("<h1> Api to fetch the blogs</h1>");
+});
+
 app.listen(PORT, () => {
   console.log(`Listening at port ${PORT}`);
 });
