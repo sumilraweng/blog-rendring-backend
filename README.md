@@ -49,3 +49,7 @@ $ npm install
 ```sh
 $ npm run start
 ```
+
+## Link to fetch blogs
+
+[fetch api](https://blog-app-raweng.herokuapp.com/)
