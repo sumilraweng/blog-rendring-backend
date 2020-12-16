@@ -6,8 +6,9 @@ This is Nodejs-express project. Which is implemented to learn the fundamentals o
 - /blogs/:id - to fetch blog with respective id
 - /blogs/?name=sumil - to fetch the blog with query params
 - /blogs - to create the blog
+- /blogs/:id -to update the blog with id
 
-#### send the post request in following manner
+#### send the post and update request with body in following manner
 
 ```json
 {

@@ -4,8 +4,6 @@ const database = require("../models/blogModels");
 const Blog = require("../models/BlogConstructor");
 const uniqid = require("uniqid");
 
-const blogFilter = (blogArrayData, query) => {};
-
 module.exports.getAllBlog = (req, res) => {
   const jsonData = database.readFile();
   const keys = Object.keys(req.query);
@@ -62,5 +60,29 @@ module.exports.createBlog = (req, res) => {
     });
   } else {
     res.status(200).json(blogObject);
+  }
+};
+
+module.exports.updateBlog = (req, res) => {
+  let jsonBlogData = database.readFile();
+  for (i in req.body.links) {
+    req.body.links[i].id = uniqid();
+  }
+
+  for (i in jsonBlogData) {
+    if (jsonBlogData[i].id == req.params.id) {
+      jsonBlogData[i].author = req.body.author;
+      jsonBlogData[i].title = req.body.title;
+      jsonBlogData[i].content = req.body.content;
+      jsonBlogData[i].links = req.body.links;
+      jsonBlogData[i].imageUrl = req.body.imageUrl;
+      const err = database.writeFile(jsonBlogData);
+      if (err) {
+        res.status(500).json({
+          status: "Internal Error",
+        });
+      } else res.status(200).json(jsonBlogData[i]);
+      break;
+    }
   }
 };
