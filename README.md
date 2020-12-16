@@ -7,6 +7,21 @@ This is Nodejs-express project. Which is implemented to learn the fundamentals o
 - /blogs/?name=sumil - to fetch the blog with query params
 - /blogs - to create the blog
 
+#### send the post request in following manner
+
+```json
+{
+  "author": "<author name>",
+  "title": "<title of the blog>",
+  "content": "<here the content of the blog> ",
+  "links": [
+    { "title": "<title of the link>" },
+    { "title": "<title of the link>" }
+  ],
+  "imageUrl": "<CDN link of image>"
+}
+```
+
 ## folder structure
 
 ```
