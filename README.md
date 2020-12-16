@@ -2,10 +2,10 @@
 
 This is Nodejs-express project. Which is implemented to learn the fundamentals of express. In this project we make the server using express and having api
 
-- api/blogs - to fetch the all blogs
-- api/blogs/:id - to fetch blog with respective id
-- api/blogs/?name=sumil - to fetch the blog with query params
-- api/blogs - to create the blog
+- /blogs - to fetch the all blogs
+- /blogs/:id - to fetch blog with respective id
+- /blogs/?name=sumil - to fetch the blog with query params
+- /blogs - to create the blog
 
 ## folder structure
 
