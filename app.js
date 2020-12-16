@@ -1,11 +1,12 @@
 // Importing npm install library
 const express = require("express");
-
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 // importing folder
 const blogRouter = require("./router/blogsRouter");
 
 //Inatialization the  varaible
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 //Using the middleware
