@@ -4,15 +4,27 @@ This is Nodejs-express project. Which is implemented to learn the fundamentals o
 
 - /blogs - to fetch the all blogs
 - /blogs/:id - to fetch blog with respective id
+- /blogs/?name=sumil - to fetch the blog with query params
+- /blogs - to create the blog
 
 ## folder structure
 
 ```
 ├── app.js
+├── controllers
+│   └── blogController.js
 ├── DATA
 │   └── blog.json
+├── middleware
+│   └── blogPostverify.js
+├── models
+│   ├── BlogConstructor.js
+│   └── blogModels.js
 ├── package.json
-└── README.md
+├── package-lock.json
+├── README.md
+└── router
+    └── blogsRouter.js
 ```
 
 ## Installation
