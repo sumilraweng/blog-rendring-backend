@@ -9,7 +9,6 @@ const blogFilter = (blogArrayData, query) => {};
 module.exports.getAllBlog = (req, res) => {
   const jsonData = database.readFile();
   const keys = Object.keys(req.query);
-  console.log(req.query);
   if (keys.length) {
     const data = jsonData.filter((blog) => {
       return keys.every((property) => {
@@ -18,7 +17,6 @@ module.exports.getAllBlog = (req, res) => {
     });
 
     res.json(data);
-    console.log("data-->", data);
   } else {
     res.json(database.readFile());
   }
@@ -31,10 +29,7 @@ module.exports.getBlogById = (req, res) => {
       return user.id == req.params.id;
     });
     if (blog) {
-      res.status(200).json({
-        status: "sucessfull",
-        data: blog,
-      });
+      res.status(200).json(blog);
     } else {
       res.status(200).json({
         status: "sucessfull",
@@ -66,9 +61,6 @@ module.exports.createBlog = (req, res) => {
       status: "Internal Error",
     });
   } else {
-    res.status(200).json({
-      status: "sucessfull",
-      data: blogObject,
-    });
+    res.status(200).json(blogObject);
   }
 };
